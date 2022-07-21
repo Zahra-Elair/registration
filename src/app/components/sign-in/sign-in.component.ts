@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegistrationService } from '../registration.service';
-import { User } from '../user';
-@Component({
-  selector: 'app-update',
-  templateUrl: './update.component.html',
-  styleUrls: ['./update.component.css']
-})
-export class UpdateComponent implements OnInit {
+import { RegistrationService } from '../../services/registration.service';
+import { User } from '../../models/user';
 
-  
+
+@Component({
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.css']
+})
+export class SignInComponent implements OnInit {
 
   msg=''
   user=new User(0,'','','','','','','','','');
@@ -29,32 +29,28 @@ export class UpdateComponent implements OnInit {
         if(data.profile=="USER"){
           this.msg="" 
           this._router.navigate(["user"])
-          console.log(data.profile);}
+          }
           else 
         if(data.profile=="ADMIN"){
           this.msg="" 
           this._router.navigate(["admin"])
-          console.log(data.profile);}
+          }
     },
 
-      error => {console.log(error)
+      error => {
         this.msg="wrong email or password"     }
     )
 
   }
 
-  gotoprofile(){
-    this._router.navigate(["admin"])
-    // if(data.profile=="USER"){
-    //   this._router.navigate(["profile-user"])}
-    //   else 
-    // if(data.profile=="ADMIN"){
-    //   this._router.navigate(["profile"])
-    }
+  gotosignup(){
+    this._router.navigate(["signup"])
   }
 
 
+
+
+
+
   
-
-
-
+}
