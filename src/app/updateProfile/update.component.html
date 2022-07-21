@@ -1,1 +1,38 @@
 hello, here you can update your profile
+<button (click)="gotoprofile()" type="submit" class="btn btn-info">back to profile</button>
+
+<form #myForm="ngForm" (ngSubmit)="loginUser()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">sapid</label>
+      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.sapid" name="sapid">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">matricule RH</label>
+      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.matricule" name="matricule">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">nom</label>
+      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.nom" name="nom">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">prenom</label>
+      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.prenom" name="prenom">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email"  class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="user.email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="Password" placeholder="Password" [(ngModel)]="user.password" name="password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">service</label>
+      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.service" name="service">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">tel</label>
+      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.tel" name="tel">
+    </div>
+    <button type="submit" class="btn btn-info">SignUp</button>
+  </form>

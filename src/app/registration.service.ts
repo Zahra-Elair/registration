@@ -15,4 +15,8 @@ export class RegistrationService {
     return this._http.post<any>("http://localhost:9090/api/login",user)
 
   }
+  public SignUpUserFromRemote(user:User):Observable<any>{
+    return this._http.post<any>("http://localhost:9090/api/registeruser",user)
+
+  }
 }

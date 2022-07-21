@@ -1,16 +1,49 @@
-<form #myForm="ngForm" (ngSubmit)="loginUser()">
-    <div class="form-group" >
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email"  class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="user.email">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" name="Password" placeholder="Password" [(ngModel)]="user.password">
-    </div>
-    <div>
-      <small class="text-danger">{{msg}}</small>
-    </div>
-    <button type="submit" class="btn btn-info">SignUp</button>
-  </form>
-  <p>you don't have an account ! <a>SignUp here</a></p>
-  
+<p>you already have an account ! <button (click)="gotosignin()" type="submit" class="btn btn-info">SignIn here</button></p>
+
+
+<form #myForm="ngForm" (ngSubmit)="signUpUser()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">sapid</label>
+    <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.sapid" name="sapid">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">matricule RH</label>
+    <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.matricule" name="matricule">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">nom</label>
+    <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.nom" name="nom">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">prenom</label>
+    <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.prenom" name="prenom">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email"  class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="user.email" name="email" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="Password" placeholder="Password" [(ngModel)]="user.password" name="password" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">profile</label>
+    <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="user.profile" name="profile" required>
+      <option>USER</option>
+      <option>ADMIN</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">service</label>
+    <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.service" name="service">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">tel</label>
+    <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.tel" name="tel">
+  </div>
+  <div>
+    <small class="text-danger">{{msg}}</small>
+  </div>
+  <button type="submit" class="btn btn-info">SignUp</button>
+</form>
+
