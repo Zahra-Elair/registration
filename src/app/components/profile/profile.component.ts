@@ -8,10 +8,13 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   
+  user=JSON.parse(localStorage.getItem("currentUser") || '{}')
 
   constructor(private _router: Router) { }
 
   ngOnInit(): void {
+    
+  
   }
 
   update(){

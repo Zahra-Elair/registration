@@ -22,18 +22,24 @@ export class SignInComponent implements OnInit {
   loginUser(){
     this._service.loginUserFromRemote(this.user).subscribe(
       data => {
-        console.log(data);
+        console.log(data + "data awel me jet");
         if(data == null) { 
           this.msg="wrong email or password"
         }else
         if(data.profile=="USER"){
           this.msg="" 
           this._router.navigate(["user"])
+          this._service.saveData("currentUser",JSON.stringify(data))
+
           }
           else 
         if(data.profile=="ADMIN"){
           this.msg="" 
           this._router.navigate(["admin"])
+          this._service.saveData("currentUser",JSON.stringify(data))
+          console.log(localStorage.getItem("currentUser") + "data fil local storage");
+          
+
           }
     },
 
