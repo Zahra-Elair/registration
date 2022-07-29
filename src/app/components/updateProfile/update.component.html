@@ -1,38 +1,132 @@
 hello, here you can update your profile
 <button (click)="gotoprofile()" type="submit" class="btn btn-info">back to profile</button>
 
-<form #myForm="ngForm" (ngSubmit)="loginUser()">
-    <div class="form-group">
-      <label for="exampleInputEmail1">sapid</label>
-      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.sapid" name="sapid">
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="home">Home</a></li>
+            <li class="breadcrumb-item"><a href="/home/profile">Profile</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Modifier</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">matricule RH</label>
-      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.matricule" name="matricule">
+    <form [formGroup]="registerForm" (ngSubmit)="update()"  >
+    <div class="row">
+      <div class="col-lg-2">
+      </div>
+      <div class="col-lg-6">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Matricule RH</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="form-control">{{user.matriculeRH}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">SAP-ID</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{user.sapid}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <input
+          formControlName="nom"
+          type="text"
+          class="form-control"
+          placeholder="Nom"
+          value={{user.nom}}
+        />
+            </div>
+            <hr>
+            <div class="row">
+              <input
+              formControlName="prenom"
+              type="text"
+              class="form-control"
+              placeholder="Prenom"
+              value={{user.prenom}}
+            />
+            </div>
+            <hr>
+            <div class="row">
+              <input
+              formControlName="service"
+              type="text"
+              class="form-control"
+              placeholder="Service"
+              value={{user.service}}
+            />
+            </div>
+            <hr>
+            <div class="row">
+              <input
+              formControlName="tel"
+              type="tel"
+              class="form-control"
+              placeholder="Telephone"
+              value={{user.tel}}
+            />
+            </div>
+            <hr>
+            <div class="row">
+              <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              placeholder="email"
+              value={{user.email}}
+            />
+            </div>
+            <hr>
+            <div class="row">
+              <input
+              formControlName="password"
+              type="password"
+              class="form-control"
+              placeholder="password"
+              value={{user.password}}
+            />
+            </div>
+            <hr>
+            <div class="row">
+              <input
+              [formControl]="confirmPassword"
+              type="password"
+              class="form-control"
+              placeholder="confirmPassword"
+            />
+            </div><br/>
+            <div>
+              <small class="text-danger">{{msg}}</small>
+            </div><br/>
+            <div>
+              <small class="text-danger">{{msg1}}</small>
+            </div>
+            <br/>
+            
+            <button type="submit" class="btn btn-primary btn-block">
+              Modifier
+            </button> 
+            <button (click)="reseto()" type="button" class="btn btn-primary btn-block">
+              reset
+            </button> 
+      </div>
+        </div>
+    
+          </div>
     </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">nom</label>
-      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.nom" name="nom">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">prenom</label>
-      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.prenom" name="prenom">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email"  class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="user.email" name="email">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" name="Password" placeholder="Password" [(ngModel)]="user.password" name="password">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">service</label>
-      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.service" name="service">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">tel</label>
-      <input class="form-control" type="text" placeholder="Default input" [(ngModel)]="user.tel" name="tel">
-    </div>
-    <button type="submit" class="btn btn-info">SignUp</button>
   </form>
+  </div>
+
+</section>
