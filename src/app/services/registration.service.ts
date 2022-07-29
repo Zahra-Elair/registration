@@ -38,8 +38,11 @@ export class RegistrationService {
 
   }
 
-  public update(id:any ,user:User):Observable<any>{
-    return this._http.put<any>("http://localhost:9090/api/maj/{id}",user)
+  public update(user:User):Observable<any>{
+    console.log("hello");
+    
+    return  this._http.post<any>(`${environment.apiUrl}/api/registeruser`,user)
+
   }
   getAllUsers() {
     return this._http.get(`http://localhost:9090/api/allusers`);
